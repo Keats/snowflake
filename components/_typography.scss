@@ -55,6 +55,10 @@ a {
   text-decoration: none;
 }
 
+hr {
+  margin: $base-margin 0;
+}
+
 blockquote {
   margin: $base-margin;
   padding-left: $base-margin;

@@ -1,0 +1,26 @@
+$media-object-class: 'media' !default;
+
+
+// Should it be %extend rather than a mixin?
+@mixin media-object() {
+  display: flex;
+  align-items: flex-start;
+
+  .#{$media-object-class}__figure {
+    margin-right: 1rem;
+  }
+
+  .#{$media-object-class}__content {
+    flex: 1;
+  }
+
+  &--reverse {
+    .#{$media-object-class}__figure {
+      order: 1;
+    }
+  }
+
+  &--centered {
+    align-items: center;
+  }
+}

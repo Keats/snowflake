@@ -1,0 +1,19 @@
+{
+  "name": "snowflake",
+  "version": "0.0.0",
+  "description": "Snowflake =========",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Keats/snowflake.git"
+  },
+  "keywords": [
+    "sass",
+    "scss"
+  ],
+  "author": "Vincent Prouillet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Keats/snowflake/issues"
+  },
+  "homepage": "https://github.com/Keats/snowflake"
+}

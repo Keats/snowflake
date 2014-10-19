@@ -1,0 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
+// Base components
+@import "components/normalize";
+@import "components/type";
+
+// Modules
+@import "components/messages";
+@import "components/divider";
+@import "components/_grid";

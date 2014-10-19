@@ -1,26 +1,35 @@
-* {
-  box-sizing: border-box;
-}
-
-// Base components
-@import "components/normalize";
-@import "components/type";
-
-// Modules
-@import "components/messages";
-.message {
-  @include message();
-}
-
-@import "components/divider";
-.divider {
-  @include divider();
-}
-
-
+@import "snowflake";
 
 
 body {
   width: 80%;
   margin: auto;
+}
+
+.message {
+  @include message();
+}
+
+.divider {
+  @include divider();
+}
+
+.group {
+  @include flex-group;
+}
+.block {
+  @include flex-block;
+}
+
+.block-25 {
+  @include flex-block(25%);
+}
+.background {
+  background-color: rgba(147,128,108,.1);
+  padding: .5rem;
+  text-align: center;
+  width: 100%;
+}
+.first-cell {
+  @include grid-order(-42);
 }

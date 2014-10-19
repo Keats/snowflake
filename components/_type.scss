@@ -53,6 +53,10 @@ p, ul, ol {
 
 a {
   text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 hr {

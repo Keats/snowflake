@@ -2,5 +2,17 @@
   box-sizing: border-box;
 }
 
+// Base components
 @import "components/normalize";
 @import "components/typography";
+
+// Modules
+@import "components/messages";
+.message {
+  @include message();
+}
+
+body {
+  width: 80%;
+  margin: auto;
+}

@@ -1,0 +1,27 @@
+
+//-------------------- Media queries --------------------//
+$landscape: "only screen and (orientation: landscape)" !default;
+$portrait: "only screen and (orientation: portrait)" !default;
+
+$small: "only screen and (max-width: 768px)" !default;
+$medium: "only screen and (max-width: 992px)" !default;
+$large: "only screen and (min-width: 993px)" !default;
+
+// Some mixins to make the code more readable
+@mixin for-large {
+  @media #{$large} {
+    @content;
+  }
+}
+
+@mixin for-medium {
+  @media #{$medium} {
+    @content;
+  }
+}
+
+@mixin for-small {
+  @media #{$small} {
+    @content;
+  }
+}

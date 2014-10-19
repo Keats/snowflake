@@ -4,7 +4,7 @@ var browserSync = require('browser-sync');
 var prefix = require('gulp-autoprefixer');
 
 
-var sassFiles = './*.scss';
+var sassFiles = ['./*.scss', './components/*.scss'];
 
 
 gulp.task('browser-sync', function () {

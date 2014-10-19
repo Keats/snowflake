@@ -12,6 +12,14 @@
   @include message();
 }
 
+@import "components/divider";
+.divider {
+  @include divider();
+}
+
+
+
+
 body {
   width: 80%;
   margin: auto;

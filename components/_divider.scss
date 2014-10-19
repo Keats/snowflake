@@ -1,0 +1,28 @@
+// A hr with some content in the middle
+@mixin divider(
+  $border-top: 1px solid black,
+  $center-padding: 1.5rem // augment that if the thing in the middle is big
+) {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &:after, &:before {
+    position: absolute;
+    content: " ";
+    top: 50%;
+    width: 50%;
+
+    border-top: $border-top;
+  }
+
+  &:before {
+    left: 0;
+    margin-left: - $center-padding;
+  }
+
+  &:after {
+    right: 0;
+    margin-right: - $center-padding;
+  }
+}

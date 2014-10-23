@@ -1,7 +1,6 @@
 $media-object-class: 'media' !default;
 
 
-// Should it be %extend rather than a mixin?
 @mixin media-object() {
   display: flex;
   align-items: flex-start;

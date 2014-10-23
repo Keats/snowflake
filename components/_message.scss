@@ -6,6 +6,7 @@
 // success: #226b36
 
 // Flash messages, used for notifications usually
+// Can be also be used as panels
 @mixin message($colour: #226b36, $border-radius: .2rem) {
   text-align: left;
   padding: .75rem;

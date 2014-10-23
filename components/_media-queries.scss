@@ -1,27 +1,19 @@
 
 //-------------------- Media queries --------------------//
+// Mobile first because why not
 $landscape: "only screen and (orientation: landscape)" !default;
 $portrait: "only screen and (orientation: portrait)" !default;
 
-$small: "only screen and (max-width: 768px)" !default;
-$medium: "only screen and (max-width: 992px)" !default;
-$large: "only screen and (min-width: 993px)" !default;
 
-// Some mixins to make the code more readable
-@mixin for-large {
-  @media #{$large} {
-    @content;
-  }
-}
+// Breakpoints from Foundation
+// 0 - 640px = small
+// 641 - 1024 = medium
+// 1024+ = large
+$small-up: "only screen" !default;
+$small-only: "only screen and (max-width: 640px)" !default;
 
-@mixin for-medium {
-  @media #{$medium} {
-    @content;
-  }
-}
+$medium-up: "only screen and (min-width: 641px)" !default;
+$medium-only: "only screen and (min-width: 641px) and (max-width: 1024px)" !default;
 
-@mixin for-small {
-  @media #{$small} {
-    @content;
-  }
-}
+$large-up: "only screen and (min-width: 1025px)" !default;
+$large-only: "only screen and (min-width: 1025px) and (max-width: 99999px)" !default;

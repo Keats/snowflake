@@ -48,3 +48,7 @@ body {
 .inline-list {
   @include inline-list;
 }
+
+.arrow {
+  @include arrow;
+}

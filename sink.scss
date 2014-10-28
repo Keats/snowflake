@@ -4,6 +4,7 @@
 body {
   width: 80%;
   margin: auto;
+  padding: 4rem;
 }
 
 .message {
@@ -51,4 +52,8 @@ body {
 
 .arrow {
   @include arrow;
+}
+
+.button {
+  @include button($background: #E74C3C, $color: white);
 }

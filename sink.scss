@@ -57,3 +57,8 @@ body {
 .button {
   @include button($background: #E74C3C, $color: white);
 }
+
+input[type=range] {
+  @include slider;
+  width: 100%;
+}

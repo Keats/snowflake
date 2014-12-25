@@ -17,9 +17,9 @@
   },
   "homepage": "https://github.com/Keats/snowflake",
   "devDependencies": {
-    "browser-sync": "^1.5.8",
+    "browser-sync": "^1.8.2",
     "gulp": "^3.8.9",
-    "gulp-autoprefixer": "^1.0.1",
+    "gulp-autoprefixer": "^2.0.0",
     "gulp-sass": "^1.2.0"
   }
 }

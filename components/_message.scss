@@ -14,6 +14,7 @@
   border-radius: $border-radius;
 
   color: $colour;
-  background-color: scale_color($colour, $lightness: 90%);
-  border: 1px solid scale_color($colour, $lightness: 70%);
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: 2px solid $colour;
 }

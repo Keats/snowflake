@@ -9,7 +9,7 @@ body {
 }
 
 .message {
-  @include message();
+  @include message($colour: $blue);
 }
 
 .divider {

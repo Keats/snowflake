@@ -8,6 +8,10 @@ body {
   padding: 4rem;
 }
 
+input[type="text"] {
+  @include text-input;
+}
+
 .message {
   @include message($colour: $blue);
 }

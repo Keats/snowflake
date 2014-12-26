@@ -1,0 +1,28 @@
+@import "utils";
+
+$placeholder-colour: #999;
+$placeholder-font-style: italic;
+
+
+@mixin text-input($width: 300px, $border: 1px solid #ccc, $border-radius: .2rem) {
+  @extend %reset-input;
+
+  width: $width;
+  border: $border;
+  border-radius: $border-radius;
+
+  &::-webkit-input-placeholder {
+     color: $placeholder-colour;
+     font-style: $placeholder-font-style;
+  }
+
+  &::-moz-placeholder {
+     color: $placeholder-colour;
+     font-style: $placeholder-font-style;
+  }
+
+  &:-ms-input-placeholder {
+     color: $placeholder-colour;
+     font-style: $placeholder-font-style;
+  }
+}

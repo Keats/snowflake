@@ -13,3 +13,20 @@
 %caps {
   text-transform: uppercase;
 }
+
+%reset-input {
+  display: inline-block;
+  text-align: left;
+  padding: 12px;
+
+  border: none;
+  background: none;
+  appearance: textfield;
+  box-shadow: none;
+  border-radius: none;
+
+  &:focus {
+    outline: none;
+    transition: 0.5s ease all;
+  }
+}

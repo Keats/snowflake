@@ -1,9 +1,6 @@
 // A hr with some content in the middle
-// $border-position can be either centered or doubled, as in 2 lines for each
-// side
 @mixin divider(
   $border: 1px solid black,
-  $border-position: "center",
   $center-padding: 1.5rem // augment that if the thing in the middle is big
 ) {
   text-align: center;
@@ -12,14 +9,8 @@
   &:after, &:before {
     content: "";
     flex: 1;
-
+    margin: .7rem 0;
     border-top: $border;
-    @if $border-position == "center" {
-      margin: .7rem 0;
-    } @else {
-      margin: .45em 0;
-      border-bottom: $border;
-    }
   }
 
   &:before {

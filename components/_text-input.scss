@@ -3,6 +3,7 @@
 $placeholder-colour: #999;
 $placeholder-font-style: italic;
 $input-height: 44px;
+$error-colour: red;
 
 
 @mixin text-input($border: 1px solid #ccc, $border-radius: .2rem) {
@@ -17,6 +18,14 @@ $input-height: 44px;
     color: $placeholder-colour;
     display: inline-block;
     margin-top: .5rem;
+  }
+
+  &.is-error {
+    border-color: $error-colour;
+
+    & + small {
+      color: $error-colour;
+    }
   }
 
   &::-webkit-input-placeholder {

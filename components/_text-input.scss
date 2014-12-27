@@ -13,6 +13,12 @@ $input-height: 44px;
   border: $border;
   border-radius: $border-radius;
 
+  & + small {
+    color: $placeholder-colour;
+    display: inline-block;
+    margin-top: .5rem;
+  }
+
   &::-webkit-input-placeholder {
      color: $placeholder-colour;
      font-style: $placeholder-font-style;

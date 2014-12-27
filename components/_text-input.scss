@@ -37,10 +37,11 @@ $input-height: 44px;
 
   i {
     position: absolute;
-    height: $input-height;
+    height: 100%;
     line-height: $input-height;
-    width: 30px;
+    width: 2rem;
     text-align: center;
+    opacity: .5;
 
     @if $position == "right" {
       right: 0;
@@ -48,10 +49,9 @@ $input-height: 44px;
   }
 
   input {
-    padding-left: 30px;
-
-    @if $position == "right" {
-      padding-left: 12px;
+    @if $position == "left" {
+      padding-left: 30px;
+    } @else if $position == "right" {
       padding-right: 30px;
     }
   }

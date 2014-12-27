@@ -48,6 +48,11 @@ $input-height: 44px;
   }
 
   input {
-    text-indent: 15px;
+    padding-left: 30px;
+
+    @if $position == "right" {
+      padding-left: 12px;
+      padding-right: 30px;
+    }
   }
 }

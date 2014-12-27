@@ -2,12 +2,14 @@
 
 $placeholder-colour: #999;
 $placeholder-font-style: italic;
+$input-height: 44px;
 
 
-@mixin text-input($width: 300px, $border: 1px solid #ccc, $border-radius: .2rem) {
+@mixin text-input($border: 1px solid #ccc, $border-radius: .2rem) {
   @extend %reset-input;
 
-  width: $width;
+  width: 100%;
+  height: $input-height;
   border: $border;
   border-radius: $border-radius;
 
@@ -24,5 +26,28 @@ $placeholder-font-style: italic;
   &:-ms-input-placeholder {
      color: $placeholder-colour;
      font-style: $placeholder-font-style;
+  }
+}
+
+// To use in conjunction with the text-input mixin
+// to be used on a div containing a <i> and an <input>
+@mixin text-input-icon($position: left) {
+  position: relative;
+  font-size: 1rem;
+
+  i {
+    position: absolute;
+    height: $input-height;
+    line-height: $input-height;
+    width: 30px;
+    text-align: center;
+
+    @if $position == "right" {
+      right: 0;
+    }
+  }
+
+  input {
+    text-indent: 15px;
   }
 }

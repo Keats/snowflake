@@ -12,6 +12,14 @@ input[type="text"] {
   @include text-input;
 }
 
+.input-icon {
+  @include text-input-icon;
+}
+
+.input-icon-right {
+  @include text-input-icon("right");
+}
+
 .message {
   @include message($colour: $blue);
 }

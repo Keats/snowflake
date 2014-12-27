@@ -1,0 +1,10 @@
+$label-colour: #7d7d7d;
+
+@mixin label {
+  color: $label-colour;
+  font-weight: bold;
+
+  input {
+    margin-top: .5rem;
+  }
+}

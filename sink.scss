@@ -8,6 +8,10 @@ body {
   padding: 4rem;
 }
 
+label {
+  @include label;
+}
+
 input[type="text"] {
   @include text-input;
 }

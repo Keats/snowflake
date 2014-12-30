@@ -12,6 +12,10 @@ label {
   @include label;
 }
 
+.menu {
+  @include menu;
+}
+
 input[type="text"] {
   @include text-input;
 }

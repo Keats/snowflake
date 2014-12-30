@@ -1,0 +1,49 @@
+
+@mixin menu() {
+  height: 100%;
+  width: 300px;
+
+  background-color: #313635;
+  color: white;
+  border-left: 5px solid #3FA9F5;
+
+  p, li {
+    text-transform: uppercase;
+    padding: .5rem;
+    padding-left: 1.5rem;
+  }
+
+  p {
+    margin-top: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: .8rem;
+  }
+
+  ul {
+    padding-left: 0;
+    margin-top: 0;
+  }
+
+  li {
+    list-style: none;
+
+    i {
+      padding-right: 1rem;
+      font-size: 1.2rem;
+    }
+
+    a {
+      color: white;
+    }
+
+    &.is-current {
+      background-color: #4d4f4f;
+    }
+  }
+
+  hr {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+}

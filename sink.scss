@@ -1,85 +1,89 @@
-//@import "main";
-//
-//$blue: #3FA9F5;
-//
-//body {
-//  width: 80%;
-//  margin: auto;
-//  padding: 4rem;
-//}
-//
-//label {
-//  @include label;
-//}
-//
-//.menu {
-//  @include menu;
-//}
-//
-//input[type="text"] {
-//  @include text-input;
-//}
-//
-//.input-icon {
-//  @include text-input-icon;
-//}
-//
-//.input-icon-right {
-//  @include text-input-icon("right");
-//}
-//
-//.message {
-//  @include message($colour: $blue);
-//}
-//
-//.divider {
-//  @include divider();
-//}
-//
-//
-//// Grid
-//.group {
-//  @include flex-group;
-//}
-//.block {
-//  @include flex-block;
-//}
-//
-//.block-25 {
-//  @include flex-block(25%);
-//}
-//.background {
-//  background-color: rgba(147,128,108,.1);
-//  padding: .5rem;
-//  text-align: center;
-//  width: 100%;
-//}
-//.first-cell {
-//  @include grid-order(-42);
-//}
-//
-//
-//// Media object
-//.media {
-//  @include media-object;
-//  text-align: left;
-//  margin-bottom: 1rem;
-//}
-//
-//
-//.inline-list {
-//  @include inline-list;
-//}
-//
-//.arrow {
-//  @include arrow;
-//}
-//
-//.button {
-//  @include button($background: $blue, $colour: white);
-//}
-//
-//input[type=range] {
-//  @include slider;
-//  width: 100%;
-//}
+@import "main";
+
+$blue: #3FA9F5;
+
+body {
+ width: 80%;
+ margin: auto;
+ padding: 4rem;
+}
+
+label {
+ @include label;
+}
+
+.menu {
+ @include menu;
+}
+
+input[type="text"] {
+ @include text-input;
+}
+
+.input-icon {
+ @include text-input-icon;
+}
+
+.input-icon-right {
+ @include text-input-icon("right");
+}
+
+.message {
+ @include message($colour: $blue);
+}
+
+.divider {
+ @include divider();
+}
+
+
+// Grid
+.group {
+ @include flex-group;
+}
+.block {
+ @include flex-block;
+}
+
+.block-25 {
+ @include flex-block(25%);
+}
+.background {
+ background-color: rgba(147,128,108,.1);
+ padding: .5rem;
+ text-align: center;
+ width: 100%;
+}
+.first-cell {
+ @include grid-order(-42);
+}
+
+
+// Media object
+.media {
+ @include media-object;
+ text-align: left;
+ margin-bottom: 1rem;
+}
+
+
+.inline-list {
+ @include inline-list;
+}
+
+.arrow {
+ @include arrow;
+}
+
+.button {
+ @include button($background: $blue, $colour: white);
+}
+
+input[type=range] {
+ @include slider;
+ width: 100%;
+}
+
+body {
+  background: red;
+}

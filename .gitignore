@@ -3,4 +3,5 @@ node_modules/
 
 .idea/
 
-sink.css
+*.css
+npm-debug.log

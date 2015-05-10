@@ -6,6 +6,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var sassFiles = [
   './*.scss',
   './**/*.scss',
+  '!./node_modules/**/*.scss'
 ];
 
 

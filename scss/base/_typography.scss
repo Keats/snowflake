@@ -1,23 +1,16 @@
 /**
- * Contains basic typography rules
- * The size and a lot of things needs to be changed depending on the font
- * obviously.
- * Font sizes are taken from Foundation
+ * Contains basic set of typography rules
  * Only deals generic font-sizes and text elements such as blockquotes
  */
-
-// Keep margin/padding consistent in the typography
-// Not in the variables files as it's simply for consistency in this file
-$base-spacing: 1.25rem;
 
 html {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.6;
   text-rendering: optimizelegibility;
 }
 
-// Reset paddings/margins
+// Typography resets
 div,
 dl,
 dt,
@@ -31,7 +24,6 @@ h3,
 h4,
 h5,
 h6,
-hr,
 pre,
 form,
 p,
@@ -42,41 +34,66 @@ td {
   padding:0;
 }
 
+
+// Generic header styles
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.4;
+  margin-bottom: 0.5rem;
+  margin-top: 0.2rem;
+  font-weight: normal;
 }
 
-h1 { font-size: 2.75rem; }
-h2 { font-size: 2.3rem; }
-h3 { font-size: 1.7rem; }
-h4 { font-size: 1.4rem; }
-h5 { font-size: 1.1rem; }
-h6 { font-size: 1rem; }
+// From a major third modular scale (see http://type-scale.com/)
+h1 {font-size: 2.441rem; }
+h2 {font-size: 1.953em;}
+h3 {font-size: 1.563em;}
+h4 {font-size: 1.25em;}
 
 p {
-  margin-bottom: $base-spacing;
+  margin-bottom: 1.25rem;
   line-height: 1.6;
 }
 
 small {
-  font-size: 60%;
+  font-size: 0.75rem;
 }
 
 hr {
-  margin: $base-spacing 0;
+  height: 0;
+  margin: 2.5rem 0 2rem;
   clear: both;
 }
 
+a {
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  img {
+    border: none;
+  }
+}
+
 ul, ol {
-  margin-bottom: $base-spacing;
   margin-left: 1.1rem;
-  line-height: 1.6;
+  list-style-position: outside;
+  margin-bottom: 1.25rem;
+
+  li {
+    ul, ol {
+      margin-bottom: 0;
+    }
+  }
 }
 
 blockquote {
-  margin-bottom: $base-spacing;
-  padding: 0.5rem $base-spacing 0 $base-spacing;
+  margin: 0 0 1.25rem;
+  padding: 0.5rem 1.25rem 0 1.25rem;
   border-left: 1px solid #ccc;
+  line-height: 1.6;
 
   cite {
     display: block;
@@ -85,10 +102,3 @@ blockquote {
     }
   }
 }
-
-// TODO: add smaller font-sizes for lower resolutions once I add breakpoints
-// the inspect method to stringify variables is not in libsass
-// - h1: 2.15rem
-// - h2: 1.7rem
-// - h3: 1.4rem
-// - h4: 1.1rem

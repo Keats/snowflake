@@ -4,7 +4,6 @@ var browserSync = require('browser-sync');
 var autoprefixer = require('gulp-autoprefixer');
 
 var sassFiles = [
-  './*.scss',
   './**/*.scss',
   '!./node_modules/**/*.scss'
 ];
@@ -21,8 +20,10 @@ gulp.task('sass', function() {
 gulp.task('watch', function() {
   browserSync({
     open: false,
-    server: "./"
+    server: "./sink"
   });
 
   gulp.watch(sassFiles, gulp.series('sass'));
 });
+
+gulp.task('build', gulp.series('sass'));

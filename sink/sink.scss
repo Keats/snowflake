@@ -20,17 +20,16 @@ nav {
 .grid-block {
   @include grid-block;
 }
-.grid-block-20 {
-  @include grid-size(20%);
-}
 header {
   @include grid-content($behaviour: "fit");
 }
 nav.sidebar {
   @include grid-content($padding: 1rem);
+  @include grid-size(20%);
 }
 .content {
   @include grid-content($padding: 1rem);
+  @include grid-size(80%);
 }
 .grid-container {
   @include grid-container;

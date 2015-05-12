@@ -1,0 +1,174 @@
+/*
+* The grid is using flexbox and is quite similar
+* to the one in foundation apps. Some of the mixins
+* are taken from it.
+*/
+
+
+/// Set order for a flexbox element. Items with lower numbers appear first
+///
+/// @group grid
+/// @param {Number} $order [0]
+///   Position in source order
+@mixin grid-order($order: 0) {
+  order: $order;
+}
+
+/// Add this to a block to fill all available space
+///
+/// @group grid
+@mixin grid-expand {
+  flex: 1 1 auto;
+}
+
+/// Add this to a block to only take space needed for its content
+///
+/// @group grid
+@mixin grid-fit {
+  flex: 0 0 auto;
+  overflow: visible;
+}
+
+/// Set the orientation of the grid to be row or column
+///
+/// @group grid
+/// @param {Number} $size [100%]
+///  How much % of the space the block should take
+@mixin grid-size($size: 100%) {
+  flex: 0 0 $size;
+  // From foundation apps:
+  // max-width prevents columns from wrapping early in IE10/11
+  max-width: $size;
+}
+
+/// Set the orientation of the grid to be row or column
+///
+/// @group grid
+/// @param {String} $orientation [horizontal]
+///  Orientation of the grid: horizontal or vertical
+@mixin grid-orientation($orientation: "horizontal") {
+  @if ($orientation == "horizontal") {
+    flex-flow: row wrap;
+  }
+  @else {
+    flex-flow: column nowrap;
+  }
+}
+
+/// Set the alignment of blocks within a grid along the main axis
+///   left: Items align to the left.
+///   right: Items align to the right.
+///   center: Items align to the center.
+///   justify: Items are spaced equally apart so they occupy the space of the entire grid.
+///   spaced: Items are given equal space to their left and right.
+///
+/// @group grid
+/// @param {String} $align [left]
+///   Alignment to use.
+@mixin grid-justify($align: "left") {
+  $options: (
+    left: flex-start,
+    right: flex-end,
+    center: center,
+    justify: space-between,
+    spaced: space-around,
+  );
+  justify-content: map-get($options, $align);
+}
+
+/// Set the alignment of blocks within a grid along the cross axis
+///   start: Items align to the cross-start line.
+///   end: Items align to the cross-end line.
+///   center: Items align to the center.
+///   stretch: Items stretch to fille the container
+///   baseline: Items are aligned such as their baseline align
+///
+/// @group grid
+/// @param {String} $align [stretch]
+///   Alignment to use.
+@mixin grid-align($align: "stretch") {
+  $options: (
+    start: flex-start,
+    end: flex-end,
+    center: center,
+    stretch: stretch,
+    baseline: baseline,
+  );
+  align-items: map-get($options, $align);
+}
+
+/// Creates the flexbox layout container
+///
+/// @group grid
+/// @param {String} $orientation [horizontal]
+///   Which orientation for the grid
+/// @param {Number} $order [0]
+///   Position in source order
+@mixin grid-frame($orientation: "horizontal", $order: 0) {
+  height: 100vh;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+
+  @include grid-justify("left");
+  @include grid-order($order);
+  @include grid-orientation($orientation);
+  @include grid-expand;
+}
+
+/// A grid-content element is for actual content.
+///
+/// @group grid
+/// @param {List} $padding [0 1rem]
+///   Padding for that content
+/// @param {String} $behaviour [expand]
+///   Either fit or expand
+@mixin grid-content($padding: 0 1rem, $behaviour: "expand") {
+  display: block;
+  overflow-y: auto;
+  padding: $padding;
+
+  @if $behaviour == "expand" {
+    @include grid-expand;
+  }
+  @else {
+    @include grid-fit;
+  }
+}
+
+/// Represents an actual flexbox block
+///
+/// @group grid
+/// @param {String} $orientation [horizontal]
+///   Which orientation for the block
+/// @param {Number} $order [0]
+///   Position in source order
+@mixin grid-block($orientation: "horizontal", $order: 0) {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  height: auto; // get rid of the grid-frame height
+
+  // Blocks will scroll by default if their content overflows
+  @if ($orientation == "vertical") {
+    overflow-x: auto;
+  }
+  @else {
+    overflow-y: auto;
+  }
+
+  @include grid-justify("left");
+  @include grid-order($order);
+  @include grid-orientation($orientation);
+  @include grid-expand;
+}
+
+/// Used to restrain content to a given max width
+///
+/// @group grid
+/// @param {Number} $width [50rem]
+///   Max width for the container
+@mixin grid-container($width: 50rem) {
+  max-width: $width;
+  margin: auto;
+}

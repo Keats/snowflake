@@ -10,14 +10,26 @@
 ///   Margin for the ul/ol element
 /// @param {Number} $element-margin [1rem]
 ///   Margin right for each individual li
-@mixin inline-list($outer-margin: 0, $element-margin: 1rem) {
+/// @param {Boolean} $no-last-margin [false]
+///   Remove last li margin-right if true
+@mixin inline-list(
+  $outer-margin: 0,
+  $element-margin: 1rem,
+  $no-last-margin: false
+) {
   margin: $outer-margin;
   list-style: none;
 
   > li {
-    display: inline;
+    display: inline-block;
     list-style: none;
     margin-right: $element-margin;
+
+    @if ($no-last-margin == true) {
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
 
     > * {
       display: block;

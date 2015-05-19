@@ -1,0 +1,26 @@
+/*
+* LIST
+* -------
+* Contain some ul/ol mixins
+*/
+
+/// Ensure list elements are inline
+///
+/// @param {Number} $outer-margin [0]
+///   Margin for the ul/ol element
+/// @param {Number} $element-margin [1rem]
+///   Margin right for each individual li
+@mixin inline-list($outer-margin: 0, $element-margin: 1rem) {
+  margin: $outer-margin;
+  list-style: none;
+
+  > li {
+    display: inline;
+    list-style: none;
+    margin-right: $element-margin;
+
+    > * {
+      display: block;
+    }
+  }
+}

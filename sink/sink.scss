@@ -1,6 +1,8 @@
 @import "../scss/main";
 
 $blue: #3FA9F5;
+$red: #E95A4C;
+$green: #7AC943;
 
 // design stuff
 header {
@@ -75,6 +77,18 @@ nav.sidebar {
   font-size: 2rem;
   @include grid-justify("center");
   @include grid-align("center");
+}
+
+
+// Components
+.alert-success {
+  @include alert($green);
+}
+.alert-error {
+  @include alert($red);
+}
+.inline-list {
+  @include inline-list;
 }
 
 // label {

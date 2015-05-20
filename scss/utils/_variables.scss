@@ -1,0 +1,10 @@
+
+/// Breakpoints map, contains all breakpoints to be used
+/// @access private
+/// @type Map
+/// @prop {String} key - Breakpoint name
+/// @prop {String} value - Breakpoint min-width string
+$breakpoints: (
+  'medium': (min-width: 641px),
+  'large': (min-width: 1025px),
+);

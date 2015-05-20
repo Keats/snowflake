@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync');
 var autoprefixer = require('gulp-autoprefixer');
+var sassdoc = require('sassdoc');
 
 var sassFiles = [
   './**/*.scss',
@@ -24,6 +25,11 @@ gulp.task('watch', function() {
   });
 
   gulp.watch(sassFiles, gulp.series('sass'));
+});
+
+gulp.task('sassdoc', function () {
+  return gulp.src(sassFiles)
+    .pipe(sassdoc());
 });
 
 gulp.task('build', gulp.series('sass'));

@@ -57,12 +57,13 @@
   }
 }
 
-/// Set the alignment of blocks within a grid along the main axis
-///   left: Items align to the left.
-///   right: Items align to the right.
-///   center: Items align to the center.
-///   justify: Items are spaced equally apart so they occupy the space of the entire grid.
-///   spaced: Items are given equal space to their left and right.
+/// Set the alignment of blocks within a grid along the main axis  
+///
+/// - left: items align to the left.  
+/// - right: items align to the right.  
+/// - center: items align to the center.  
+/// - justify: items are spaced equally apart so they occupy the space of the entire grid.  
+/// - spaced: items are given equal space to their left and right.  
 ///
 /// @group grid
 /// @param {String} $align [left]
@@ -78,12 +79,13 @@
   justify-content: map-get($options, $align);
 }
 
-/// Set the alignment of blocks within a grid along the cross axis
-///   start: Items align to the cross-start line.
-///   end: Items align to the cross-end line.
-///   center: Items align to the center.
-///   stretch: Items stretch to fille the container
-///   baseline: Items are aligned such as their baseline align
+/// Set the alignment of blocks within a grid along the cross axis.  
+///
+/// - start: items align to the cross-start line.  
+/// - end: items align to the cross-end line.  
+/// - center: items align to the center.  
+/// - stretch: items stretch to fille the container  
+/// - baseline: items are aligned such as their baseline align  
 ///
 /// @group grid
 /// @param {String} $align [stretch]

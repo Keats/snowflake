@@ -15,7 +15,7 @@
 }
 
 /// Responsive manager.
-/// @param {String} $breakpoint - Breakpoint
+/// @param {String} $breakpoint - Breakpoint name
 /// @requires $breakpoints
 @mixin respond-to($breakpoint) {
   $raw-query: map-get($breakpoints, $breakpoint);

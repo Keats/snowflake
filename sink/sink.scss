@@ -90,6 +90,9 @@ nav.sidebar {
 .inline-list {
   @include inline-list;
 }
+button, .button {
+  @include button;
+}
 
 // label {
 //  @include label;

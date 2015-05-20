@@ -9,3 +9,10 @@
     clear: both;
   }
 }
+
+
+/// Helper to have an element take full width
+@mixin full-width {
+  display: block;
+  width: 100%;
+}

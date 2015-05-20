@@ -1,0 +1,43 @@
+/*
+* BUTTON
+* -------
+* A basic design for buttons
+*/
+
+/// Creates a button style
+///
+/// @param {Color} $bg-color [#3FA9F5]
+///   Background color of the button
+/// @param {Color} $text-color [white]
+///   Color of the text
+@mixin button($bg-color: #3FA9F5, $text-color: white) {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  border: 0;
+  border-radius: 2px;
+  margin-bottom: 1.25rem;
+  padding: 0.5rem 2rem;
+  background: $bg-color;
+  color: $text-color;
+  font-weight: bold;
+  // 2 magic shadows to give the bottom border effect
+  box-shadow: inset 0 -0.1rem 0 rgba(0, 0, 0, 0.2),
+              0 0.1rem 0 rgba(0, 0, 0, 0.075);
+
+  &:hover {
+    $hover-color: scale-color($bg-color, $lightness: 20%);
+    background: $hover-color;
+  }
+
+  &:active {
+    $active-color: scale-color($bg-color, $lightness: -30%);
+    background: $active-color;
+  }
+
+  &--is-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}

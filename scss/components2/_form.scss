@@ -2,5 +2,78 @@
   FORM
   ----
 
-  Contains styling for 
+  Contains styling for form inputs/labels, inputs with
+  errors etc
 */
+
+/// Helper to set placeholder content for all the browser prefixes.  
+/// Meant to be used in an input.
+///
+/// @group form
+/// @content placeholder css
+@mixin input-placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}  
+}
+
+
+/// Gets rid of browser styling for inputs 
+/// and set a common base style
+///
+/// @group form
+@mixin reset-input {
+  // appearance not supported in current autoprefixer
+  // will be in the next version though
+  -webkit-appearance: none;
+  -moz-appearance: none;  
+  border: none;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: normal;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+
+/// Style an input
+///
+/// @group form
+/// @param {Color} $border-color [#ccc]
+///   Color of the text input border
+/// @param {Number} $border-radius [0]
+///   Border radius for the input
+/// @param {Color} $placeholder-color [#999]
+///   Text color of the placeholder
+/// @param {String} $placeholder-font-style [italic]
+///   Font style of the placeholder
+/// @param {Color} $error-border-color [red]
+///   Border color of an input with the error class
+@mixin input(
+  $border-color: #ccc,
+  $border-radius: 0,
+  $placeholder-color: #999,
+  $placeholder-font-style: italic
+) {
+  @include reset-input;
+
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+
+  @include input-placeholder {
+    color: $placeholder-color;
+    font-style: $placeholder-font-style;
+  }
+
+  &.error {
+    border-color: red;
+  }
+}

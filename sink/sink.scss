@@ -94,6 +94,12 @@ button, .button {
   @include button;
 }
 
+
+// Forms
+input {
+  @include input;
+}
+
 // label {
 //  @include label;
 // }

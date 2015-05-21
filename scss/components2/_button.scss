@@ -4,13 +4,24 @@
 * A basic design for buttons
 */
 
-/// Creates a button style
+/// Creates a button style.  
+/// It is possible to pass hover and active bg colors as well.
+/// If they are null, it will scale the bg-color accordingly.
 ///
 /// @param {Color} $bg-color [#3FA9F5]
 ///   Background color of the button
+/// @param {Color} $bg-color-hover [null]
+///   Background color of the button on hover
+/// @param {Color} $bg-color-active [null]
+///   Background color of the button when active
 /// @param {Color} $text-color [white]
 ///   Color of the text
-@mixin button($bg-color: #3FA9F5, $text-color: white) {
+@mixin button(
+  $bg-color: #3FA9F5,
+  $bg-color-hover: null,
+  $bg-color-active: null,
+  $text-color: white
+) {
   display: inline-block;
   text-align: center;
   cursor: pointer;
@@ -26,12 +37,22 @@
               0 0.1rem 0 rgba(0, 0, 0, 0.075);
 
   &:hover {
-    $hover-color: scale-color($bg-color, $lightness: 20%);
+    @if not $bg-color-hover {
+      $hover-color: scale-color($bg-color, $lightness: 20%);
+    }
+    @else {
+      $hover-color: $bg-color-hover;
+    }
     background: $hover-color;
   }
 
   &:active {
-    $active-color: scale-color($bg-color, $lightness: -30%);
+      @if not $bg-color-active {
+      $active-color: scale-color($bg-color, $lightness: -30%);
+    }
+    @else {
+      $active-color: $bg-color-active;
+    }
     background: $active-color;
   }
 

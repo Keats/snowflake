@@ -99,6 +99,9 @@ button, .button {
 table {
   @include table;
 }
+.media {
+  @include media-object;
+}
 
 // Forms
 input {

@@ -1,0 +1,35 @@
+/*
+  MEDIA OBJECTS
+  -------------
+  
+  An image with context properly aligned next to it,
+  like in most comments system/facebook/twitter.
+*/
+
+/// Creates a mediadisplay: flex; object container. Classes names are
+/// forced using BEM with .media as the base one.
+///
+@mixin media-object {
+  display: flex;
+  align-items: flex-start;
+
+  .media__picture {
+    margin-right: 1rem;
+  }
+
+  .media__content {
+    flex: 1;
+  }
+
+  &--centered {
+    align-items: center;
+  }
+
+  &--reversed {
+    .media__picture {
+      order: 1;
+      margin-right: 0;
+      margin-left: 1rem;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+/*
+  TABLE
+  -------
+  
+  A basic mixin to prettify tables
+*/
+
+
+/// Set some common form styling
+///
+/// @param {Color} $header-bg-color [#ccc]
+///   Color of the background for the theader row
+/// @param {Color} $cell-border-color [#ccc]
+///   Color of the border bottom of tbody cells
+/// @param {Color} $footer-border-color [#ccc]
+///   Color of the border top of the footer row
+@mixin table(
+  $header-bg-color: #ccc,
+  $cell-border-color: #ccc,
+  $footer-border-color: #ccc
+) {
+  width: 100%;
+  text-align: left;
+
+  thead {
+    background: $header-bg-color;
+
+    th {
+      padding: 0.5rem 0.75rem;
+    }
+  }
+
+  tbody tr {
+    border-bottom: 1px dashed #ccc;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    td {
+      padding: 0.5rem 1rem;      
+    }
+  }
+
+  tfoot tr {
+    border-top: 2px solid $footer-border-color;
+
+    td {
+      padding: 1rem 1rem;
+      font-weight: bold;
+    }
+  }
+}

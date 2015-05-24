@@ -5,6 +5,31 @@
   Something that looks like a hr but has text in the middle
 */
 
-@mixin divider {
- // TODO
+/// Creates a <hr> equivalent with text in the middle 
+///
+/// @param {Color} $color [black]
+///   Color of the text and line
+/// @param {Number} $margin [1rem]
+///   Margin between the text and the lines
+@mixin divider($color: black, $margin: 1rem) {
+  text-align: center;
+  display: flex;
+  color: $color;
+  // Same margin as hr in _typography.scss
+  margin: 2.5rem 0 2rem;
+
+  &:after, &:before {
+    content: "";
+    flex: 1;
+    margin: .7rem 0;
+    border-top: 1px solid $color;
+  }
+
+  &:before {
+    margin-right: $margin;
+  }
+
+  &:after {
+    margin-left: $margin;
+  }
 }

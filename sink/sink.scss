@@ -93,7 +93,9 @@ nav.sidebar {
 button, .button {
   @include button;
 }
-
+.divider {
+  @include divider;
+}
 
 // Forms
 input {

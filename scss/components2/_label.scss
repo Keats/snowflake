@@ -1,0 +1,27 @@
+/*
+  LABEL
+  -------
+
+  A label can be many things: from a simple text with some background
+  color to a tag  
+*/
+
+/// Creates a basic label with a bg color and a text one
+///
+/// @param {Number} $font-size [1rem]
+///   Font size of the text inside the label
+/// @param {Color} $bg-color [#ccc]
+///   Color of the text and line
+/// @param {Color} $text-color [black]
+///   Margin between the text and the lines
+@mixin label(
+  $font-size: 1rem,
+  $bg-color: #ccc,
+  $text-color: black
+) {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+  background: $bg-color;
+  color: $text-color;
+}

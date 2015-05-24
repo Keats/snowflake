@@ -102,6 +102,9 @@ table {
 .media {
   @include media-object;
 }
+.label {
+  @include label;
+}
 
 // Forms
 input {

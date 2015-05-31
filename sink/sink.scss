@@ -115,3 +115,12 @@ table {
 input {
   @include input;
 }
+.input-icon {
+  input {
+    width: 100%;
+  }
+  @include input-with-icon;
+}
+.stacked {
+  @include stacked-input;
+}

@@ -7,7 +7,7 @@
 */
 
 /// Helper to set placeholder content for all the browser prefixes.  
-/// Meant to be used in an input.
+/// Meant to be used on an input.
 ///
 /// @group form
 /// @content placeholder css
@@ -31,11 +31,12 @@
   border: none;
   background: none;
   box-shadow: none;
+  appearance: textfield;
+  box-sizing: border-box !important;
   border-radius: 0;
 
   display: inline-block;
   padding: 0.5rem 0.75rem;
-  margin: 0.25rem 0;
   text-align: left;
   font-weight: normal;
 
@@ -77,5 +78,79 @@
 
   &.error {
     border-color: $error-border-color;
+  }
+}
+
+
+/// Make space for an icon on the left or right of an input
+/// This mixin is meant on an input container div
+///
+/// @group form
+/// @param {String} $position [left]
+///   Which side is the icon
+/// @param {Number} $height [36px]
+///   The height the icon will take, should be the same as the input height
+/// @param {Number} $width [2rem]
+///   The width the icon will take
+/// @param {Number} $padding [2rem]
+///   How much padding at the beginning of the input to ensure icon and text
+///   don't overlap
+@mixin input-with-icon(
+  $position: left,
+  $height: 36px,
+  $width: 2rem,
+  $padding: 2rem
+) {
+  position: relative;
+  font-size: 1rem;
+
+  i {
+    position: absolute;
+    height: $height;
+    width: $width;
+    text-align: center;
+    margin: 0;
+
+    left: 0;
+    right: auto;
+    @if $position == "right" {
+      right: 0;
+      left: auto;
+    }
+
+    &:before {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+  }
+
+  input {
+    @include clearfix;
+    @if $position == "left" {
+      padding-left: $padding;
+    } @else if $position == "right" {
+      padding-right: $padding;
+    }
+  }
+}
+
+
+/// A type of input with the label above it
+///
+/// @group form
+@mixin stacked-input {
+  margin-bottom: 1rem;
+
+  label {
+    width: 100%;
+    display: inline-block;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+  }
+
+  input {
+    width: 100%;
   }
 }

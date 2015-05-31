@@ -105,61 +105,13 @@ table {
 .label {
   @include label;
 }
+.arrow {
+  padding: 1rem;
+  background: #ccc;
+  @include arrow;
+}
 
 // Forms
 input {
   @include input;
 }
-
-// label {
-//  @include label;
-// }
-
-// .menu {
-//  @include menu;
-// }
-
-// input[type="text"] {
-//  @include text-input;
-// }
-
-// .input-icon {
-//  @include text-input-icon;
-// }
-
-// .input-icon-right {
-//  @include text-input-icon("right");
-// }
-
-// .message {
-//  @include message($colour: $blue);
-// }
-
-// .divider {
-//  @include divider();
-// }
-
-// // Media object
-// .media {
-//  @include media-object;
-//  text-align: left;
-//  margin-bottom: 1rem;
-// }
-
-
-// .inline-list {
-//  @include inline-list;
-// }
-
-// .arrow {
-//  @include arrow;
-// }
-
-// .button {
-//  @include button($background: $blue, $colour: white);
-// }
-
-// input[type=range] {
-//  @include slider;
-//  width: 100%;
-// }

@@ -1,11 +1,34 @@
+/*
+  ARROW
+  -------
+  
+  CSS arrow, to be used for tooltips for example
+*/
 
+/// Create an arrow at the given position with quite a few options
+///
+/// @param {String} $direction [top]
+///   Where the arrow is pointing: top|bottom|left|right
+/// @param {Number} $size [10px]
+///   Size of the arrow
+/// @param {Color} $direction [#ccc]
+///   Color of the arrow
+/// @param {Number} $position [50%]
+///   Position of the arrow, 50% means in the center
+/// @param {Number} $position [50%]
+///   Position of the arrow, 50% means in the center
+/// @param {Number} $margin [-1px]
+///   Controls how far out/in the arrow is from the container
+/// @param {Boolean} $set-relative [true]
+///   Whether to set the arrow mixin as position: relative. Useful when putting
+///   on a position: absolute element
 @mixin arrow(
   $direction: top,
   $size: 10px,
   $color: #ccc,
-  $center: 50%,
+  $position: 50%,
   $margin: -1px,
-  $set-relative: true  // used when putting an arrow on a position: absolute element
+  $set-relative: true
 ) {
   @if $set-relative == true {
     position: relative;
@@ -20,7 +43,7 @@
     border-color: $color;
 
     @if $direction == "right" {
-      top: $center;
+      top: $position;
       left: 100%;
       margin-left: $margin;
       margin-top: $size * -1;
@@ -30,7 +53,7 @@
       border-left-color: inherit;
     } @else if $direction == "down" {
       top: 100%;
-      left: $center;
+      left: $position;
       margin-top: $margin;
       margin-left: $size * -1;
       border-left: $size solid transparent;
@@ -38,7 +61,7 @@
       border-top: $size solid $color;
       border-top-color: inherit;
     } @else if $direction == "left" {
-      top: $center;
+      top: $position;
       right: 100%;
       margin-right: $margin;
       margin-top: $size * -1;
@@ -48,7 +71,7 @@
       border-right-color: inherit;
     } @else {
       bottom: 100%;
-      left: $center;
+      left: $position;
       margin-bottom: $margin;
       margin-left: $size * -1;
       border-left: $size solid transparent;

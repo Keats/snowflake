@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+// Vendor
+@import "normalize";
+
+// Actual components
+@import "typography";
+@import "responsive";

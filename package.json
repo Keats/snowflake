@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Snowflake",
   "scripts": {
-    "gulp": "./node_modules/gulp/bin/gulp.js"
+    "start": "gulp watch"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,7 @@
   "devDependencies": {
     "browser-sync": "^2.7.1",
     "gulp": "gulpjs/gulp.git#4.0",
-    "gulp-autoprefixer": "^2.1.0",
+    "gulp-autoprefixer": "^3.1.0",
     "gulp-sass": "^2.0.0",
     "sassdoc": "^2.1.11"
   }

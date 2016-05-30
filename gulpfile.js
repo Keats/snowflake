@@ -6,6 +6,7 @@ var sassdoc = require('sassdoc');
 
 var sassFiles = [
   './**/*.scss',
+  '!./scss/*.scss',
   '!./node_modules/**/*.scss'
 ];
 

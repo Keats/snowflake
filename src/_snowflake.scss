@@ -1,8 +1,10 @@
 @charset "utf-8";
 
+// Sanity
 *, *::after, *::before {
   box-sizing: border-box;
 }
+
 
 // Vendor
 @import "normalize";

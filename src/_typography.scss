@@ -35,31 +35,110 @@ $global-lineheight: 28px !default;
 // Line height must be a multiple of 28px
 // font-size's must be a multiple of 7px 
 
-// applied to body as well
+// applied to body or html
 @mixin typography($global-lineheight: 28px, $font-size-base: 7px) {
-  font-size: $font-size-base * 3;
+  // Typography resets
+  div,
+  dl, dt, dd,
+  ul, ol, li,
+  h1, h2, h3, h4, h5, h6,
+  pre,
+  form,
+  p,
+  blockquote,
+  th, td {
+    margin: 0;
+    padding: 0;
+  }
+  
+  color: #222;
+  font-size: $font-size-base * 3;  
+  text-rendering: optimizelegibility;
+
+  small {
+    font-size: $font-size-base * 2;
+    line-height: $global-lineheight;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, blockquote {
+    margin-bottom: $global-lineheight;    
+  }
 
   p {
     line-height: $global-lineheight;
-    margin: 0 0 $global-lineheight 0;
   }
 
   h3 {
     font-size: $font-size-base * 4;
     line-height: $global-lineheight * 2;
-    margin: 0 0 $global-lineheight 0;
   }
 
   h2 {
     font-size: $font-size-base * 6;
     line-height: $global-lineheight * 2;
-    margin: 0 0 $global-lineheight 0;
   }
 
   h1 {
     font-size: $font-size-base * 8;
     line-height: $global-lineheight * 2;
-    margin: 0 0 $global-lineheight 0;
+  }
+
+  a {
+    text-decoration: none;
+
+    img {
+      border: none;
+    }
+  }
+
+  blockquote {
+    border-left: 1px solid #ccc;
+    line-height: $global-lineheight;
+    padding: ($global-lineheight / 2) $global-lineheight 0 $global-lineheight;
+
+    p {
+      // TODO: necessary?
+      margin-bottom: ($global-lineheight / 2);
+    }
+
+    cite {
+      display: block;
+
+      &:before {
+        content: "\2014 \00A0"; // em dash
+      }
+    }
+  }
+  
+  ul, ol {
+    margin: $global-lineheight;
+    margin-right: 0;
+
+    ul, ol {
+      // TODO: this margin is a bit dodgy
+      margin: $global-lineheight / 1.5;
+      margin-right: 0;
+    }
+
+    li {
+      margin-top: $global-lineheight / 2;
+    }
+  }
+
+  ul {
+    list-style: disc inside;
+
+    ul {
+      list-style-type: circle;
+    }
+  }
+
+  ol {
+    list-style: decimal inside;
+
+    ol {
+      list-style-type: lower-alpha;
+    }
   }
 
   @include respond-to('small') {

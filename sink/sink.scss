@@ -14,3 +14,7 @@ body {
 button {
   @include button;
 }
+
+.modal {
+  @include modal;
+}

@@ -1,0 +1,8 @@
+
+
+// Use on a <image> or class
+@mixin responsive-image() {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}

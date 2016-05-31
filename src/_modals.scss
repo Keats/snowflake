@@ -1,0 +1,34 @@
+
+// this one assumes the following shape
+// <div class="modal">
+//   <div class="modal__header"></div>
+//   <div class="modal__body"></div>
+//   <div class="modal__footer"></div>
+// </div>
+// should be applied to a modal class or any other classname
+@mixin modal() {
+  width: 50vw;
+  max-width: 96vw;
+  max-height: 96vh;
+  background-color: white;
+  overflow: hidden;
+  border-radius: 5px;
+  margin: 0 auto;
+  text-align: left;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+
+  &__header {
+    padding: $global-lineheight;
+  }
+
+  &__body {
+    padding: $global-lineheight;
+    max-height: 50vh;
+    overflow-y: auto;
+  }
+
+  &__footer {
+    padding: $global-lineheight;
+    text-align: right;
+  }
+}

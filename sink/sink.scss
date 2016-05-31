@@ -18,3 +18,25 @@ button {
 .modal {
   @include modal;
 }
+
+input[type="text"], input[type="email"], textarea {
+  @include text-input;
+}
+
+label {
+  @include label;
+}
+
+.radio {
+  @include radio-input;
+  margin-bottom: 28px;
+}
+
+.checkbox {
+  @include checkbox-input;
+  margin-bottom: 28px;
+}
+
+select {
+  @include select;
+}

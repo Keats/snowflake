@@ -1,0 +1,91 @@
+
+// General reset of all inputs like
+@mixin reset-input-appearance {
+  border: none;
+  background: none;
+  box-shadow: none;
+  box-sizing: border-box !important;
+  border-radius: 0;
+  outline: 0;
+  max-width: 100%;
+  width: 100%;
+  display: inline-block;
+  padding: $global-lineheight / 2 $global-lineheight;
+  text-align: left;
+  vertical-align: middle;
+  font-weight: normal;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+
+// To be used on a <label>
+@mixin label() {
+  display: block;
+  line-height: $global-lineheight;
+  margin-bottom: $global-lineheight / 4;
+}
+
+
+// To be used on a 
+// <input type="text/email/password/url/search">
+@mixin text-input() {
+  @include reset-input-appearance;
+  appearance: textfield;
+  margin-bottom: $global-lineheight;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+
+  &:disabled {
+    @extend %disabled;
+  }
+
+  &::placeholder {
+    opacity: 0.3;
+    font-style: italic;
+  }
+}
+
+// To be used on a label with the following input
+// <label>
+//   <input type="radio" name="gender" />
+//   Male
+// </label>
+@mixin radio-input() {
+  input {
+    @include reset-input-appearance;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+  }
+
+  cursor: pointer;
+  display: inline-block;
+  margin-right: $global-lineheight / 2;
+}
+
+@mixin select() {
+  @include reset-input-appearance;
+
+  appearance: none;
+  cursor: pointer;
+  display: block;
+  line-height: $global-lineheight;
+  margin-bottom: $global-lineheight;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAUCAMAAACzvE1FAAAADFBMVEUzMzMzMzMzMzMzMzMKAG/3AAAAA3RSTlMAf4C/aSLHAAAAPElEQVR42q3NMQ4AIAgEQTn//2cLdRKppSGzBYwzVXvznNWs8C58CiussPJj8h6NwgorrKRdTvuV9v16Afn0AYFOB7aYAAAAAElFTkSuQmCC) no-repeat right 0.75rem center white;
+}
+
+// To be used on a label with the following input
+// <label>
+//   <input type="checkbox" name="gender" />
+//   Male
+// </label>
+// Same as radio really
+@mixin checkbox-input() {
+  @include radio-input;
+}

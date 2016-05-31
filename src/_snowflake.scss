@@ -5,10 +5,13 @@
   box-sizing: border-box;
 }
 
-
 // Vendor
 @import "normalize";
+
+
+$global-lineheight: 28px !default;
 
 // Actual components
 @import "typography";
 @import "responsive";
+@import "tables";

@@ -1,9 +1,7 @@
 // From http://codepen.io/toddpadwick/pen/KzLBrW
 
-$global-lineheight: 28px !default;
-
 // To be applied to body
-@mixin baseline-grid($global-lineheight: 28px) {
+@mixin baseline-grid() {
   position: relative;
 
   &::after {
@@ -36,7 +34,7 @@ $global-lineheight: 28px !default;
 // font-size's must be a multiple of 7px 
 
 // applied to body or html
-@mixin typography($global-lineheight: 28px, $font-size-base: 7px) {
+@mixin typography($font-size-base: 7px) {
   // Typography resets
   div,
   dl, dt, dd,

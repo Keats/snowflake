@@ -6,3 +6,7 @@ body {
   // @include baseline-grid;
   @include typography;
 }
+
+.table {
+  @include table;
+}

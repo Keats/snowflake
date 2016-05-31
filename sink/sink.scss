@@ -10,3 +10,7 @@ body {
 .table {
   @include table;
 }
+
+button {
+  @include button;
+}

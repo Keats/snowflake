@@ -22,7 +22,7 @@
 
 
 // To be used on a <label>
-@mixin label() {
+@mixin form-label() {
   display: block;
   line-height: $global-lineheight;
   margin-bottom: $global-lineheight / 4;

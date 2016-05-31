@@ -24,7 +24,7 @@ input[type="text"], input[type="email"], textarea {
 }
 
 label {
-  @include label;
+  @include form-label;
 }
 
 .radio {

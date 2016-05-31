@@ -1,0 +1,19 @@
+
+@mixin tag($bg-colour: #eff1fa, $text-colour: #666) {
+  display: inline-flex;
+  align-content: space-around;
+  align-items: center;
+  max-width: 100%;
+  padding: 0.3rem 0.6rem;
+
+  color: $text-colour;
+  background-color: $bg-colour;
+  border-radius: 2px;
+  font-size: 1rem;
+  text-decoration: none;
+  vertical-align: middle;
+
+  &:hover, &:focus {
+    background-color: scale-color($bg-colour, $lightness: -3%);
+  }
+}

@@ -15,11 +15,11 @@
 }
 
 // apply to <button> or a button class
-@mixin button($bg-color: #3FA9F5, $text-color: white) {
+@mixin button($bg-colour: #3FA9F5, $text-color: white) {
   @include reset-button-appearance;
   
   border-radius: 2px;
-  background: $bg-color;
+  background: $bg-colour;
   color: $text-color;
   padding: 0.5rem 2rem;
 
@@ -28,11 +28,11 @@
               0 0.1rem 0 rgba(0, 0, 0, 0.075);
 
   &:hover {
-    background: scale-color($bg-color, $lightness: 20%);
+    background: scale-color($bg-colour, $lightness: 20%);
   }
 
   &:active {
-    background: scale-color($bg-color, $lightness: -30%);
+    background: scale-color($bg-colour, $lightness: -30%);
   }
 
   &:disabled {
